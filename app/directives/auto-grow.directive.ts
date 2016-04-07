@@ -1,0 +1,32 @@
+import {Directive, ElementRef, Renderer } from 'angular2/core';
+import {on} from "cluster";
+
+@Directive({
+    selector: '[autoGrow]',
+    host:{
+        '(focus)': 'onFocus()',
+        '(blur)': 'onBlur()'
+    }
+})
+export class AutoGrow {
+
+    constructor(private el: ElementRef, private renderer:Renderer) {
+    }
+
+    onFocus(){
+        this.renderer.setElementStyle(this.el.nativeElement,'width','300');
+    }
+
+    onBlur(){
+        this.renderer.setElementStyle(this.el.nativeElement,'width','200');
+    }
+
+}
+
+
+
+
+
+
+
+
