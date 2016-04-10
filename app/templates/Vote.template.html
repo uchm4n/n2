@@ -1,0 +1,5 @@
+<div style="width: 20px">
+    <i class="glyphicon glyphicon-chevron-up" [class.activeOr]="vote == 1" (click)="onUp()"></i>
+    <div>{{count + vote}}</div>
+    <i class="glyphicon glyphicon-chevron-down" [class.activeOr]="vote == -1" (click)="onDown()"></i>
+</div>
