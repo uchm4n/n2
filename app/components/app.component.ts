@@ -3,13 +3,13 @@ import {TaskService} from '../services/task.service';
 import {AutoGrow} from "../directives/auto-grow.directive";
 import {Star} from "./Star.component";
 import {Vote} from "./Vote.component";
-import {ContactFormComponent} from "./contact-form.component";
+import {LoginComponent} from "./Login.component";
 
 @Component({
     selector: 'u-app',
     templateUrl: '/app/templates/Main.template.html',
     providers: [TaskService],
-    directives:[AutoGrow,Star,Vote,ContactFormComponent]
+    directives:[AutoGrow,Star,Vote,LoginComponent]
 })
 export class AppComponent {
     tasks;
