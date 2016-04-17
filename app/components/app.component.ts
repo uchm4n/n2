@@ -3,30 +3,13 @@ import {TaskService} from '../services/task.service';
 import {AutoGrow} from "../directives/auto-grow.directive";
 import {Star} from "./Star.component";
 import {Vote} from "./Vote.component";
+import {ContactFormComponent} from "./contact-form.component";
 
 @Component({
     selector: 'u-app',
-    template: `<div (click)="showDetailsClicked()" style="cursor: pointer">Detail Info {{contact.name}} {{contact.familyName}}</div>
-    <input autoGrow type="text" [(ngModel)]="contact.name"  > <br>
-     <h3>Favorite</h3>
-    <star is-empty="!showDetails" (changeSt)="onStarChange($e)"></star><br>
-    <vote vote-count="11"></vote>
-    <hr>
-    <div *ngIf="showDetails">
-            <br>
-            <span>Name: {{contact.name}}</span><br>
-            <span>Family Name: {{contact.familyName}}</span><br>
-            <span>Phone: {{contact.phone}}</span><br>
-            
-            <h1>Tasks:</h1>
-            <ul>
-                <li *ngFor="#task of tasks">{{task}}</li>
-            </ul>            
-            
-            
-        </div>`,
+    templateUrl: '/app/templates/Main.template.html',
     providers: [TaskService],
-    directives:[AutoGrow,Star,Vote]
+    directives:[AutoGrow,Star,Vote,ContactFormComponent]
 })
 export class AppComponent {
     tasks;
