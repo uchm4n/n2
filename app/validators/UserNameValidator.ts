@@ -8,16 +8,16 @@ export class UserNameValidator {
         return null;
     }
 
-    static unique(control: Control){
-        /*return new Promise((resolve,reject) => {
+    /*static unique(control: Control){
+        return new Promise((resolve,reject) => {
             setTimeout(function () {
                 if (control.value == 'ucha')
                     return {unique: true};
                 else
                     resolve(null);
             },1000);
-        });*/
-    }
+        });
+    }*/
 
 }
 

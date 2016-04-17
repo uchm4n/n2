@@ -1,6 +1,7 @@
 import  {Component} from "angular2/core"
 import  {Control, ControlGroup, Validators, FormBuilder} from "angular2/common"
 import {UserNameValidator} from "../validators/UserNameValidator";
+import {Observable} from 'rxjs/Rx';
 
 
 @Component({
@@ -12,9 +13,14 @@ export class LoginComponent {
 
     constructor(fb:FormBuilder) {
         this.formG = fb.group({
-            username: ['', Validators.compose([Validators.required,UserNameValidator.noSpace]),UserNameValidator.unique],
+            username: ['', Validators.compose([Validators.required,UserNameValidator.noSpace])],
             password: ['', Validators.required]
         });
+
+
+        var keyUps = Observable.fromEvent(document.getElementById('#username'),'keyup');
+        keyUps.subscribe(data => console.log(data));
+
     }
 
 

@@ -1,14 +1,15 @@
 import {Component} from 'angular2/core';
-import {TaskService} from '../services/task.service';
 import {AutoGrow} from "../directives/auto-grow.directive";
 import {Star} from "./Star.component";
 import {Vote} from "./Vote.component";
 import {LoginComponent} from "./Login.component";
+import {TaskService} from "../services/Task.service";
+import {HTTP_PROVIDERS} from 'angular2/http';
 
 @Component({
     selector: 'u-app',
     templateUrl: '/app/templates/Main.template.html',
-    providers: [TaskService],
+    providers: [TaskService,HTTP_PROVIDERS],
     directives:[AutoGrow,Star,Vote,LoginComponent]
 })
 export class AppComponent {
