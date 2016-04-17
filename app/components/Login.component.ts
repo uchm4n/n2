@@ -12,7 +12,7 @@ export class LoginComponent {
 
     constructor(fb:FormBuilder) {
         this.formG = fb.group({
-            username: ['', Validators.compose([Validators.required,UserNameValidator.noSpace])],
+            username: ['', Validators.compose([Validators.required,UserNameValidator.noSpace]),UserNameValidator.unique],
             password: ['', Validators.required]
         });
     }
