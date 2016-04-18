@@ -5,19 +5,15 @@ import {Vote} from "./Vote.component";
 import {LoginComponent} from "./Login.component";
 import {TaskService} from "../services/Task.service";
 import {HTTP_PROVIDERS} from 'angular2/http';
+import {Tasks} from "./Tasks.component";
 
 @Component({
     selector: 'u-app',
     templateUrl: '/app/templates/Main.template.html',
     providers: [TaskService,HTTP_PROVIDERS],
-    directives:[AutoGrow,Star,Vote,LoginComponent]
+    directives:[AutoGrow,Star,Vote,LoginComponent,Tasks]
 })
 export class AppComponent {
-    tasks;
-    constructor(tasksService:TaskService){
-        this.tasks = tasksService.getTasks();
-    }
-
 
     public contact = {
         name:'Ucha',

@@ -1,5 +1,4 @@
 import {Directive, ElementRef, Renderer } from 'angular2/core';
-import {on} from "cluster";
 
 @Directive({
     selector: '[autoGrow]',
