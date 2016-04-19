@@ -6,12 +6,13 @@ import {LoginComponent} from "./Login.component";
 import {TaskService} from "../services/Task.service";
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {Tasks} from "./Tasks.component";
-
+import {Github} from "./Github.component";
+import {GithubService} from "../services/Github.service";
 @Component({
     selector: 'u-app',
     templateUrl: '/app/templates/Main.template.html',
-    providers: [TaskService,HTTP_PROVIDERS],
-    directives:[AutoGrow,Star,Vote,LoginComponent,Tasks]
+    providers: [TaskService,GithubService,HTTP_PROVIDERS],
+    directives:[AutoGrow,Star,Vote,LoginComponent,Tasks,Github]
 })
 export class AppComponent {
 

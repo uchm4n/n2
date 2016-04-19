@@ -1,4 +1,10 @@
 <div class="col-md-4">
+    <github></github>
+</div>
+<div class="col-md-6">
+    <tasks></tasks>
+</div>
+<div class="col-md-2">
     <div (click)="showDetailsClicked()" style="cursor: pointer">Detail Info {{contact.name}} {{contact.familyName}}</div>
     <input autoGrow type="text" [(ngModel)]="contact.name"> <br>
     <h3>Favorite</h3>
@@ -15,11 +21,6 @@
         <ul>
             <li *ngFor="#task of tasks">{{task}}</li>
         </ul>
-
-
     </div>
-</div>
-<div class="col-md-8">
-    <tasks></tasks>
 </div>
 
