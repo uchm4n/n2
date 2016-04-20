@@ -9,10 +9,12 @@ import {GithubComponent} from "./Github.component";
 import {TaskService} from "../services/Task.service";
 import {GithubService} from "../services/Github.service";
 import  {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
+import {TaskComponent} from "./Task.component";
 
 @RouteConfig([
-    {path:'home',name:'Home',component:TasksComponent,useAsDefault:true},
-    {path:'github',name:'GitHub', component:GithubComponent},
+    {path:'/home',name:'Home',component:TasksComponent,useAsDefault:true},
+    {path:'/github',name:'GitHub', component:GithubComponent},
+    {path:'/tasks/:id',name:'Task', component:TaskComponent},
     {path:'/*other',name:'Other', redirectTo:['Home']}
 ])
 

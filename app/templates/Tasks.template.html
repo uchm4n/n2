@@ -9,13 +9,8 @@
             <Star></Star>
         </div>
         <div class="col-md-8">
-            <div *ngFor="#task of tasksData; #i = index">
-                <h1><a href="#{{i + 1}}">{{task.title}}</a></h1>
-
-                <p class="lead">by <a href="#">U</a></p><hr>
-                <p><span class="glyphicon glyphicon-time"></span>{{createAt | date }}</p><hr>
-                <img class="img-responsive" src="http://placehold.it/350x150" alt=""><hr>
-
+            <div *ngFor="#task of tasksData">
+                <h4><a [routerLink]="['Task',{ id: task.id}]">{{task.title}}</a></h4>
                 <p>{{task.body}}</p><hr>
             </div>
         </div>

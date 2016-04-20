@@ -20,6 +20,11 @@ export class TaskService {
         return this.http.post(this.url,JSON.stringify(task))
             .map(res => res.json());
     }
+    
+    getTask(id) {
+        return this.http.get(this.url + '/' +id)
+            .map(res => res.json());
+    }
 
 }
 
