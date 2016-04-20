@@ -1,4 +1,4 @@
-import  {Component,Input,Output,EventEmitter} from "angular2/core"
+import  {Component,Input} from "angular2/core"
 
 
 @Component({
@@ -8,7 +8,7 @@ import  {Component,Input,Output,EventEmitter} from "angular2/core"
 })
 export class Vote{
     count:number = 10;
-    @Input vote:number = 0;
+    @Input() vote:number = 0;
     
 
     onUp():number{

@@ -4,11 +4,11 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-2">
             <Vote></Vote>
             <Star></Star>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div *ngFor="#task of tasksData">
                 <h4><a [routerLink]="['Task',{ id: task.id}]">{{task.title}}</a></h4>
                 <p>{{task.body}}</p><hr>

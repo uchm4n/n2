@@ -10,11 +10,13 @@ import {TaskService} from "../services/Task.service";
 import {GithubService} from "../services/Github.service";
 import  {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
 import {TaskComponent} from "./Task.component";
+import {ContactAsComponent} from "./ContactAs.component";
 
 @RouteConfig([
     {path:'/home',name:'Home',component:TasksComponent,useAsDefault:true},
     {path:'/github',name:'GitHub', component:GithubComponent},
     {path:'/tasks/:id',name:'Task', component:TaskComponent},
+    {path:'/contact',name:'ContactAs', component:ContactAsComponent},
     {path:'/*other',name:'Other', redirectTo:['Home']}
 ])
 
@@ -22,7 +24,11 @@ import {TaskComponent} from "./Task.component";
     selector: 'u-app',
     templateUrl: '/app/templates/Main.template.html',
     providers: [TaskService,GithubService,HTTP_PROVIDERS],
-    directives:[AutoGrow,Star,Vote,LoginComponent,TasksComponent,GithubComponent,RouterOutlet,RouterLink]
+    directives:
+        [
+            AutoGrow, Star, Vote, ContactAsComponent, LoginComponent, TasksComponent, GithubComponent,
+            RouterOutlet, RouterLink
+        ]
 })
 export class AppComponent {
 
