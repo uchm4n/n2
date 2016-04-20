@@ -12,13 +12,21 @@ export class Tasks implements OnInit{
     public tasksData;
     public commentsData;
     public createAt = new Date();
+    private isLoading = true;
 
-    constructor(private tasks:TaskService){
+    constructor(private taskService:TaskService) {
+        this.taskService.createTask({
+            userId: 101,
+            title: 'dfsdf',
+            body: 'asdasdas',
+        });
     }
 
     ngOnInit(){
-        this.tasks.getTasks().subscribe( tasks => {
+        this.taskService.getTasks().subscribe( tasks => {
+            this.isLoading = false;
             this.tasksData = tasks;
+            console.log(tasks[0].title);
         })
     }
 
