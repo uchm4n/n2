@@ -3,16 +3,24 @@ import {AutoGrow} from "../directives/auto-grow.directive";
 import {Star} from "./Star.component";
 import {Vote} from "./Vote.component";
 import {LoginComponent} from "./Login.component";
-import {TaskService} from "../services/Task.service";
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {Tasks} from "./Tasks.component";
-import {Github} from "./Github.component";
+import {TasksComponent} from "./Tasks.component";
+import {GithubComponent} from "./Github.component";
+import {TaskService} from "../services/Task.service";
 import {GithubService} from "../services/Github.service";
+import  {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
+
+@RouteConfig([
+    {path:'home',name:'Home',component:TasksComponent,useAsDefault:true},
+    {path:'github',name:'GitHub', component:GithubComponent},
+    {path:'/*other',name:'Other', redirectTo:['Home']}
+])
+
 @Component({
     selector: 'u-app',
     templateUrl: '/app/templates/Main.template.html',
     providers: [TaskService,GithubService,HTTP_PROVIDERS],
-    directives:[AutoGrow,Star,Vote,LoginComponent,Tasks,Github]
+    directives:[AutoGrow,Star,Vote,LoginComponent,TasksComponent,GithubComponent,RouterOutlet,RouterLink]
 })
 export class AppComponent {
 

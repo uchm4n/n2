@@ -7,7 +7,7 @@ import {Observable} from 'rxjs/Observable';
     templateUrl:'app/templates/GitHub.template.html',
     providers:[GithubService]
 })
-export class Github implements OnInit{
+export class GithubComponent implements OnInit{
     public user = {};
     public followers;
 
