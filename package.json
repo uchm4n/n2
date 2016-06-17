@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "g-n2",
+=======
+  "name": "n2-rc1",
+>>>>>>> 90728a8d5c67dc28d6a6d815cf4c13af580eed2d
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
@@ -16,6 +20,7 @@
     "@angular/common": "2.0.0-rc.1",
     "@angular/compiler": "2.0.0-rc.1",
     "@angular/core": "2.0.0-rc.1",
+<<<<<<< HEAD
     "@angular/http": "^2.0.0-rc.1",
     "@angular/platform-browser": "2.0.0-rc.1",
     "@angular/platform-browser-dynamic": "2.0.0-rc.1",
@@ -31,6 +36,12 @@
     "angularfire2": "^2.0.0-beta.1",
     "es6-shim": "^0.35.0",
     "firebase": "^3.0.5",
+=======
+    "@angular/platform-browser": "2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
+    "@angular/router": "2.0.0-rc.1",
+    "es6-shim": "^0.35.0",
+>>>>>>> 90728a8d5c67dc28d6a6d815cf4c13af580eed2d
     "reflect-metadata": "0.1.3",
     "rxjs": "5.0.0-beta.6",
     "systemjs": "0.19.26",

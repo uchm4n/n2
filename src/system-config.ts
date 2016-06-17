@@ -3,13 +3,17 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+<<<<<<< HEAD
   '@angular2-material': 'vendor/@angular2-material'
+=======
+>>>>>>> 90728a8d5c67dc28d6a6d815cf4c13af580eed2d
 };
 
 /** User packages configuration. */
 const packages: any = {
 };
 
+<<<<<<< HEAD
 // put the names of any of your Material components here
 const materialPkgs:string[] = ['core','button','card','toolbar','icon','input','sidenav','list'];
 
@@ -17,6 +21,8 @@ materialPkgs.forEach((pkg) => {
   packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
 });
 
+=======
+>>>>>>> 90728a8d5c67dc28d6a6d815cf4c13af580eed2d
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
@@ -37,7 +43,18 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+<<<<<<< HEAD
   'app/+dogs',
+=======
+  'app/task',
+  'app/components/task',
+  'app/service',
+  'app/models',
+  'app/components/models',
+  'app/components/model',
+  'app/+models',
+  'app/components/filters',
+>>>>>>> 90728a8d5c67dc28d6a6d815cf4c13af580eed2d
   /** @cli-barrel */
 ];
 

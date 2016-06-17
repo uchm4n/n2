@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+<<<<<<< HEAD
   <title>Angular Application</title>
   <base href="/">
   {{content-for 'head'}}
@@ -12,6 +13,30 @@
 </head>
 <body>
   <app>Loading...</app>
+=======
+  <title>Testing Angular RC 1</title>
+  <base href="/">
+  {{content-for 'head'}}
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Service worker support is disabled by default.
+       Install the worker script and uncomment to enable.
+       Only enable service workers in production.
+  <script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/worker.js').catch(function(err) {
+        console.log('Error installing service worker: ', err);
+      });
+    }
+  </script>
+  -->
+</head>
+<body>
+  <main>Loading...</main>
+>>>>>>> 90728a8d5c67dc28d6a6d815cf4c13af580eed2d
 
   <script src="vendor/es6-shim/es6-shim.js"></script>
   <script src="vendor/reflect-metadata/Reflect.js"></script>
