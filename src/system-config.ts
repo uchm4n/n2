@@ -9,6 +9,13 @@ const map: any = {
 const packages: any = {
 };
 
+// put the names of any of your Material components here
+const materialPkgs:string[] = ['core','button','card','toolbar','icon','sidenav','list','input'];
+
+materialPkgs.forEach((pkg) => {
+  packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+});
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
