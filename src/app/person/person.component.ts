@@ -26,4 +26,8 @@ export class PersonComponent implements OnInit {
   ngOnInit() {
   }
 
+  postPerson(val){
+    this.persons.push(val);
+    val = '';
+  }
 }

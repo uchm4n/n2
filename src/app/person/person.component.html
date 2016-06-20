@@ -1,3 +1,18 @@
+
+<md-card >
+  <md-card-title>Create Person</md-card-title>
+  <md-card-content>
+    <form #f="ngForm">
+      <md-input placeholder="Name" ngControl="name"></md-input>
+      <md-input placeholder="Biography" ngControl="bio"></md-input>
+      <md-input placeholder="Image" ngControl="image"></md-input>
+    </form>
+    <md-card-action align="end">
+      <button md-raised-button color="primary" (click)="postPerson(f.value)">Save</button>
+    </md-card-action>
+  </md-card-content>
+</md-card>
+
 <md-card *ngFor="let person of persons | async">
   <md-card-title>Person: {{person.name}}</md-card-title>
   <img width="300" [src]="person.image">
