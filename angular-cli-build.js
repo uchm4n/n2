@@ -12,7 +12,9 @@ module.exports = function(defaults) {
       'reflect-metadata/*.js',
       'rxjs/**/*.js',
       '@angular/**/*.js',
-      '@angular2-material/**/*'
+      '@angular2-material/**/*',
+      'angularfire2/**/*.js',
+      'firebase/*.js'
     ]
   });
 };

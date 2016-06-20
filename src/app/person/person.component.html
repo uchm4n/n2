@@ -1,0 +1,13 @@
+<md-card *ngFor="let person of persons | async">
+  <md-card-title>Person: {{person.name}}</md-card-title>
+  <img width="300" [src]="person.image">
+
+  <md-card-content align="left">
+    {{person.bio}}
+  </md-card-content>
+
+  <md-card-actions align="end">
+    <button md-button color="primary">Like</button>
+    <button md-button color="primary">Dislike</button>
+  </md-card-actions>
+</md-card>
