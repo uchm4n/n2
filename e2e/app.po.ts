@@ -1,3 +1,5 @@
+import { browser, element, by } from 'protractor/globals';
+
 export class Rc6Page {
   navigateTo() {
     return browser.get('/');
