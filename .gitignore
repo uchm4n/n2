@@ -10,10 +10,13 @@
 
 # IDEs and editors
 /.idea
+<<<<<<< HEAD
 .project
 .classpath
 *.launch
 .settings/
+=======
+>>>>>>> 0728e06de457b5f238b5f319e7f98e54303455a6
 
 # misc
 /.sass-cache
@@ -29,5 +32,9 @@ testem.log
 /e2e/*.map
 
 #System Files
+<<<<<<< HEAD
 .DS_Store
 Thumbs.db
+=======
+.DS_Store
+>>>>>>> 0728e06de457b5f238b5f319e7f98e54303455a6

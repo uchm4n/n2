@@ -1,0 +1,10 @@
+md-card{
+  margin: 16px;
+}
+.secondary{
+  color: rgba(0,0,0,0.54);
+}
+
+md-input{
+  width: 50%;
+}

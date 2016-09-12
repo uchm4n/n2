@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+<<<<<<< HEAD
   <title>Rc6</title>
   <base href="/">
 
@@ -11,5 +12,27 @@
 </head>
 <body>
   <app-root>Loading...</app-root>
+=======
+  <title>N2b</title>
+  <base href="/">
+  {{content-for 'head'}}
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <n2b-app>Loading...</n2b-app>
+
+  <script src="vendor/es6-shim/es6-shim.js"></script>
+  <script src="vendor/reflect-metadata/Reflect.js"></script>
+  <script src="vendor/systemjs/dist/system.src.js"></script>
+  <script src="vendor/zone.js/dist/zone.js"></script>
+
+  <script>
+    System.import('system-config.js').then(function () {
+      System.import('main');
+    }).catch(console.error.bind(console));
+  </script>
+>>>>>>> 0728e06de457b5f238b5f319e7f98e54303455a6
 </body>
 </html>

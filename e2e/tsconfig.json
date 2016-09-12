@@ -4,6 +4,7 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+<<<<<<< HEAD
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "../dist/out-tsc-e2e",
@@ -12,5 +13,16 @@
     "typeRoots": [
       "../node_modules/@types"
     ]
+=======
+    "mapRoot": "",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "rootDir": ".",
+    "sourceMap": true,
+    "sourceRoot": "/",
+    "target": "es5"
+>>>>>>> 0728e06de457b5f238b5f319e7f98e54303455a6
   }
 }

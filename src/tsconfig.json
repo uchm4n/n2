@@ -1,8 +1,13 @@
 {
+<<<<<<< HEAD
+=======
+  "compileOnSave": false,
+>>>>>>> 0728e06de457b5f238b5f319e7f98e54303455a6
   "compilerOptions": {
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+<<<<<<< HEAD
     "lib": ["es6", "dom"],
     "mapRoot": "./",
     "module": "es6",
@@ -14,4 +19,23 @@
       "../node_modules/@types"
     ]
   }
+=======
+    "mapRoot": "",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "outDir": "../dist/",
+    "rootDir": ".",
+    "sourceMap": true,
+    "target": "es5",
+    "inlineSources": true
+  },
+
+  "files": [
+    "main.ts",
+    "typings.d.ts",
+    "node_modules/angularfire2/firebase3.d.ts"
+  ]
+>>>>>>> 0728e06de457b5f238b5f319e7f98e54303455a6
 }
