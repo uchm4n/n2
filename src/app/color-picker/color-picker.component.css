@@ -1,0 +1,12 @@
+.color-sample{
+    width: 100px;
+    height: 100px;
+}
+
+.color-sample.color-sample-blue{
+    background-color: midnightblue;
+}
+
+.color-sample.color-sample-red{
+    background-color: darkred;
+}
