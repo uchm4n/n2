@@ -1,7 +1,10 @@
 
-<div class="color-title" [ngStyle]="{'color':color}">Pick a Color:</div>
 
-<div class="color-picker">
-    <div class="color-sample color-sample-blue" (click)="choose('midnightblue')"></div>
-    <div class="color-sample color-sample-red" (click)="choose('darkred')"></div>
+<div class="color-picker center-block">
+    <div class="row center-block">
+        <div class="color-title" [ngStyle]="{'color':color}"><h3>Pick a Color:</h3></div>
+
+        <div class="col-xs-6 color-sample color-sample-blue" (click)="choose('midnightblue')"></div>
+        <div class="col-xs-6 color-sample color-sample-red" (click)="choose('darkred')"></div>
+    </div>
 </div>
