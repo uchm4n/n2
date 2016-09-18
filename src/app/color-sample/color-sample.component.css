@@ -1,0 +1,9 @@
+.color-sample{
+    width: 100px;
+    height: 100px;
+}
+
+.color-sample.color-sample-blank{
+    border: 1px solid black;
+    border-radius: 5px;
+}
