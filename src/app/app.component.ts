@@ -7,6 +7,7 @@ import {Component} from '@angular/core';
             <h1>{{title}}</h1>
             <hr>
             <color-sample></color-sample>
+            
         </div>`,
 })
 export class AppComponent {
