@@ -7,10 +7,18 @@ import {AppComponent} from './app.component';
 import {SearchBoxComponent} from './search-box/search-box.component';
 import {ColorPickerComponent} from './color-picker/color-picker.component';
 import {ColorSampleComponent} from './color-sample/color-sample.component';
-import { CollapseOnClickDirective } from './directives/collapse-on-click.directive';
+import {CollapseOnClickDirective} from './directives/collapse-on-click.directive';
+import {TabsComponent} from './tabs/tabs.component';
 
 @NgModule({
-    declarations: [AppComponent, SearchBoxComponent, ColorPickerComponent, ColorSampleComponent, CollapseOnClickDirective],
+    declarations: [
+        AppComponent,
+        SearchBoxComponent,
+        ColorPickerComponent,
+        ColorSampleComponent,
+        CollapseOnClickDirective,
+        TabsComponent,
+    ],
     imports: [
         BrowserModule,
         FormsModule,

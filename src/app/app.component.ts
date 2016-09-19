@@ -6,13 +6,15 @@ import {Component} from '@angular/core';
         <div>
             <h1>{{title}}</h1>
             <hr>
-            <color-sample></color-sample>
-            
+            <app-tabs (clicked)="onClicked($event)"></app-tabs>
         </div>`,
 })
 export class AppComponent {
 
     title = 'App is working Fine!';
 
+    onClicked(e:string){
+        console.log(e)
+    }
 
 }

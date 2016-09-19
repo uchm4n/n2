@@ -1,0 +1,30 @@
+<div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a>
+        </li>
+        <li role="presentation">
+            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a>
+        </li>
+        <li role="presentation">
+            <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a>
+        </li>
+        <li role="presentation">
+            <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+            <p>Some Text 1</p>
+            <p (clicked)="onClicked()"><a href="#">Click This</a></p>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="profile"><p class="text-center">Some Text 2</p></div>
+        <div role="tabpanel" class="tab-pane" id="messages"><p class="text-center">Some Text 3</p></div>
+        <div role="tabpanel" class="tab-pane" id="settings"><p class="text-center">Some Text 4</p></div>
+    </div>
+
+</div>
