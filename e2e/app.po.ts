@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor/globals';
 
-export class NgFinalPage {
+export class N2Page {
   navigateTo() {
     return browser.get('/');
   }

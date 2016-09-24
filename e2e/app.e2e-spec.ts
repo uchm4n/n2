@@ -1,10 +1,10 @@
-import { NgFinalPage } from './app.po';
+import { N2Page } from './app.po';
 
-describe('ng-final App', function() {
-  let page: NgFinalPage;
+describe('n2 App', function() {
+  let page: N2Page;
 
   beforeEach(() => {
-    page = new NgFinalPage();
+    page = new N2Page();
   });
 
   it('should display message saying app works', () => {
