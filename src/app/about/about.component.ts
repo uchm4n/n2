@@ -13,6 +13,7 @@ import {Subscription} from "rxjs";
       Cupiditate deserunt ea obcaecati, quam quos ratione soluta.
     </p>
     <p>Your name IS: {{name}}</p>
+    <p><button class="btn btn-default" (click)="onNavigate()">Home</button></p>
   `,
   styles: []
 })
@@ -25,6 +26,10 @@ export class AboutComponent implements  OnDestroy{
     this.subscription = activatedRoute.params.subscribe(
       (param: any) => this.name = param['name']
     );
+  }
+
+  onNavigate(){
+    this.router.navigate(['/'],{queryParams:{"some" : 100}})
   }
 
   ngOnDestroy(){
