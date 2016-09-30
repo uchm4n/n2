@@ -15,10 +15,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
           <a [routerLink]="['/']">Home</a>
         </li>
-        <li><a [routerLink]="['about','Ucha']" [queryParams]="{some:500}">About</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['about','Ucha']" [queryParams]="{some:500}">About</a></li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
