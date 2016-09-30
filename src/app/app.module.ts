@@ -9,6 +9,7 @@ import { TestComponent } from './test/test.component';
 import {routing} from "./app.routing";
 import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
+import { Err404Component } from './err404/err404.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AboutComponent } from './about/about.component';
     HighlightDirective,
     TestComponent,
     NavComponent,
-    AboutComponent
+    AboutComponent,
+    Err404Component
   ],
   imports: [
     BrowserModule,
