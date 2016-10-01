@@ -21,6 +21,13 @@
         <li routerLinkActive="active"><a [routerLink]="['about','Ucha']" [queryParams]="{some:500}">About</a></li>
       </ul>
 
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="!auth.authenticated()"><a (click)="auth.login()" >Login</a></li>
+
+        <li *ngIf="auth.authenticated()" routerLinkActive="active"><a [routerLink]="['profile']">Profile</a></li>
+        <li *ngIf="auth.authenticated()"><a (click)="auth.logout()" >Logout</a></li>
+      </ul>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

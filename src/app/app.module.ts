@@ -10,6 +10,9 @@ import {routing} from "./app.routing";
 import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { Err404Component } from './err404/err404.component';
+import {AuthService} from "./services/auth.service";
+import {AUTH_PROVIDERS} from "angular2-jwt";
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { Err404Component } from './err404/err404.component';
     TestComponent,
     NavComponent,
     AboutComponent,
-    Err404Component
+    Err404Component,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,7 @@ import { Err404Component } from './err404/err404.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [AuthService,AUTH_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
