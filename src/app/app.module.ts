@@ -13,6 +13,7 @@ import { Err404Component } from './err404/err404.component';
 import {AuthService} from "./services/auth.service";
 import {AUTH_PROVIDERS} from "angular2-jwt";
 import { ProfileComponent } from './profile/profile.component';
+import {AuthGuard} from "./auth.guard";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     routing
   ],
-  providers: [AuthService,AUTH_PROVIDERS],
+  providers: [AuthService,AUTH_PROVIDERS,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
