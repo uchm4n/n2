@@ -2,19 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import {routing} from "./app.routing";
 import { AppComponent } from './app.component';
 import { HighlightDirective } from './directives/highlite.directive';
-import { TestComponent } from './test/test.component';
-import {routing} from "./app.routing";
-import { NavComponent } from './nav/nav.component';
-import { AboutComponent } from './about/about.component';
-import { Err404Component } from './err404/err404.component';
-import {AuthService} from "./Services/auth.service";
+import { TestComponent } from './components/test/test.component';
+import { NavComponent } from './components/nav/nav.component';
+import { Err404Component } from './components/err404/err404.component';
+import {AuthService} from "./services/auth.service";
 import {AUTH_PROVIDERS} from "angular2-jwt";
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import {AuthGuard} from "./auth.guard";
 import { MaterialModule } from '@angular/material';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +21,9 @@ import { MaterialModule } from '@angular/material';
     HighlightDirective,
     TestComponent,
     NavComponent,
-    AboutComponent,
+    ProfileComponent,
     Err404Component,
-    ProfileComponent
+    MenuComponent
   ],
   imports: [
     BrowserModule,
