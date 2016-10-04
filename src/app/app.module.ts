@@ -10,10 +10,11 @@ import {routing} from "./app.routing";
 import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { Err404Component } from './err404/err404.component';
-import {AuthService} from "./services/auth.service";
+import {AuthService} from "./Services/auth.service";
 import {AUTH_PROVIDERS} from "angular2-jwt";
 import { ProfileComponent } from './profile/profile.component';
 import {AuthGuard} from "./auth.guard";
+import { MaterialModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {AuthGuard} from "./auth.guard";
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    MaterialModule.forRoot()
   ],
   providers: [AuthService,AUTH_PROVIDERS,AuthGuard],
   bootstrap: [AppComponent]
