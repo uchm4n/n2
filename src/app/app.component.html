@@ -1,7 +1,7 @@
 <md-sidenav-layout>
 
-  <md-sidenav #sidenav mode="side" class="app-sidenav">
-    Sidenav
+  <md-sidenav #sidenav mode="push" class="app-sidenav">
+    <app-menu></app-menu>
   </md-sidenav>
 
   <md-toolbar color="primary">
@@ -13,10 +13,7 @@
   </md-toolbar>
 
   <div class="app-content">
-
-
-
-
+    <router-outlet></router-outlet>
   </div>
 
 </md-sidenav-layout>

@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import {routing} from "./app.routing";
 import { AppComponent } from './app.component';
 import { HighlightDirective } from './directives/highlite.directive';
-import { NavComponent } from './components/nav/nav.component';
 import { Err404Component } from './components/err404/err404.component';
 import {AuthService} from "./services/auth.service";
 import {AUTH_PROVIDERS} from "angular2-jwt";
@@ -19,7 +18,6 @@ import { HomeComponent } from './components/home/home.component';
   declarations: [
     AppComponent,
     HighlightDirective,
-    NavComponent,
     ProfileComponent,
     Err404Component,
     MenuComponent,
