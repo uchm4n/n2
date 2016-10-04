@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import {routing} from "./app.routing";
 import { AppComponent } from './app.component';
 import { HighlightDirective } from './directives/highlite.directive';
-import { TestComponent } from './components/test/test.component';
 import { NavComponent } from './components/nav/nav.component';
 import { Err404Component } from './components/err404/err404.component';
 import {AuthService} from "./services/auth.service";
@@ -14,16 +13,17 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {AuthGuard} from "./auth.guard";
 import { MaterialModule } from '@angular/material';
 import { MenuComponent } from './components/menu/menu.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HighlightDirective,
-    TestComponent,
     NavComponent,
     ProfileComponent,
     Err404Component,
-    MenuComponent
+    MenuComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
