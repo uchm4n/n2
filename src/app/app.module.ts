@@ -12,6 +12,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {AuthGuard} from "./auth.guard";
 import { MaterialModule } from '@angular/material';
 import { HomeComponent } from './components/home/home.component';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     HttpModule,
     routing,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyBVp596mYM-BWWRsQZds-0xGQartHRJhCc'})
   ],
   providers: [AuthService,AUTH_PROVIDERS,AuthGuard],
   bootstrap: [AppComponent]
