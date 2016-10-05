@@ -1,9 +1,18 @@
 <md-sidenav-layout>
-
   <md-sidenav #sidenav mode="push" class="app-sidenav">
-    <app-menu></app-menu>
-  </md-sidenav>
+    <md-list class="app-list">
+      <h3 md-subheader>Navigation</h3>
+      <md-list-item>
+        <h4 md-line (click)="sidenav.close()"><a routerLink="">Home</a></h4>
+        <h4 md-line (click)="sidenav.close()" *ngIf="auth.authenticated()"><a [routerLink]="['profile']">Profile</a></h4>
+        <h4 md-line (click)="sidenav.close()"><a [routerLink]="['about']">About</a></h4>
+      </md-list-item>
 
+      <md-divider></md-divider>
+      <md-list-item *ngIf="!auth.authenticated()"><h4 md-line><a (click)="auth.login()" routerLink="">Login</a></h4></md-list-item>
+      <md-list-item *ngIf="auth.authenticated()"><h4 md-line><a (click)="auth.logout()" routerLink="">Logout</a></h4></md-list-item>
+    </md-list>
+  </md-sidenav>
   <md-toolbar color="primary">
     <button class="app-icon-button" (click)="sidenav.toggle()">
       <i class="material-icons app-toolbar-menu">menu</i>

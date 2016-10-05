@@ -11,7 +11,6 @@ import {AUTH_PROVIDERS} from "angular2-jwt";
 import { ProfileComponent } from './components/profile/profile.component';
 import {AuthGuard} from "./auth.guard";
 import { MaterialModule } from '@angular/material';
-import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { HomeComponent } from './components/home/home.component';
     HighlightDirective,
     ProfileComponent,
     Err404Component,
-    MenuComponent,
     HomeComponent
   ],
   imports: [
