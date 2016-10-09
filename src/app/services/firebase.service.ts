@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {FirebaseListObservable, AngularFire} from "angularfire2";
 
-
-export interface Person{
-  $key?:string;
-  bio:string;
-  image:string;
-  name:string;
+export interface Person {
+  $key?: string;
+  bio: string;
+  image: string;
+  name: string;
 }
+
 
 
 @Injectable()
@@ -33,4 +33,9 @@ export class FirebaseService {
     }
     return this.persons;
   }
+  
+  addPerson(newPerson){
+    this.persons.push(newPerson);
+  }
+  
 }
