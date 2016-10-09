@@ -14,7 +14,8 @@ import { MaterialModule } from '@angular/material';
 import { HomeComponent } from './components/home/home.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import {AngularFireModule} from "angularfire2";
-import {AboutComponent} from "./about/about.component";
+import {AboutComponent} from "./components/about/about.component";
+import { PersonsComponent } from './components/persons/persons.component';
 
 
 // FireBase Config
@@ -32,7 +33,8 @@ export const firebaseConfig = {
     ProfileComponent,
     Err404Component,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    PersonsComponent
   ],
   imports: [
     BrowserModule,
