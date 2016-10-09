@@ -6,6 +6,18 @@ import {AngularFire} from "angularfire2";
   selector: 'app-persons',
   template: `
     <div>
+    
+      <md-card *ngIf="appState == 'default'">
+        <button md-raised-button (click)="changeState('add')">Add</button>
+
+        <label for="filt">Filter By:</label>
+        <select id="filt" #filter (change)="filterBY($event,filter.value)">
+          <option value="" selected>Select A Filter</option>
+          <option value="name">Name</option>
+          <option value="bio">Bio</option>
+        </select>
+      </md-card>
+    
       <md-card *ngIf="appState == 'extend'">
         <table>
           <div *ngFor="let person of persons">
@@ -26,9 +38,8 @@ import {AngularFire} from "angularfire2";
           </div>
         </table>
         <br>
-        <button md-raised-button (click)="changeState('')">Go Back</button>
+        <button md-raised-button (click)="changeState('default')">Go Back</button>
       </md-card>
-    
       <md-card>
         <md-list class="app-list">
           <md-list-item class="app-list-item" *ngFor="let person of persons">
@@ -53,6 +64,7 @@ export class PersonsComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.appState = 'default';
     this.fs.getPersons().subscribe(persons => {
       this.persons = persons
     })
@@ -64,4 +76,11 @@ export class PersonsComponent implements OnInit {
     }
     this.appState = state
   }
+  
+  filterBY($event,filter){
+    this.fs.getPersons(filter).subscribe(persons => {
+      this.persons = persons;
+    })
+  }
+  
 }
