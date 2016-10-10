@@ -13,9 +13,9 @@ export class PersonsComponent implements OnInit {
     persons: Person[];
     appState: string;
     activeKey: string;
-    activeName : string;
-    activeBio : string;
-    activeImg : string;
+    activeName: string;
+    activeBio: string;
+    activeImg: string;
 
     constructor(af: AngularFire, private fs: FirebaseService) {
     }
@@ -51,29 +51,29 @@ export class PersonsComponent implements OnInit {
         this.changeState('default')
     }
 
-    deletePerson(key){
-        if(key != null){
+    deletePerson(key) {
+        if (key != null) {
             if (confirm('Are you sure you want to delete this?')) {
                 return this.fs.deletePerson(key);
             }
         }
     }
 
-    showEdit(person){
-        this.changeState('update',person.$key)
+    showEdit(person) {
+        this.changeState('update', person.$key)
         this.activeName = person.name
         this.activeBio = person.bio
         this.activeImg = person.image
     }
 
-    updatePerson(key){
+    updatePerson(key) {
         let updPerson = {
             name: this.activeName,
             bio: this.activeBio,
             image: this.activeImg
         }
 
-        this.fs.updatePerson(key,updPerson);
+        this.fs.updatePerson(key, updPerson);
         this.changeState('default');
     }
 

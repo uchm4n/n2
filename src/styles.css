@@ -3,83 +3,84 @@
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 
 .app-content {
-  padding: 20px;
-  height: auto;
+    padding: 20px;
+    height: auto;
 }
 
 .app-content md-card {
-  margin: 20px;
+    margin: 20px;
 }
 
-.app-content md-list{
-  margin:20px;
+.app-content md-list {
+    margin: 20px;
 }
+
 .app-sidenav {
-  padding: 10px;
-  min-width: 100px;
-  min-height: 500px;
+    padding: 10px;
+    min-width: 100px;
+    min-height: 500px;
 }
-
 
 .app-toolbar-filler {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
 .app-toolbar-menu {
-  padding: 0 14px 0 14px;
-  color: white;
+    padding: 0 14px 0 14px;
+    color: white;
 }
 
 .app-icon-button {
-  box-shadow: none;
-  user-select: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  filter: none;
-  font-weight: normal;
-  height: auto;
-  line-height: inherit;
-  margin: 0;
-  min-width: 0;
-  padding: 0;
-  text-align: left;
-  text-decoration: none;
+    box-shadow: none;
+    user-select: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    filter: none;
+    font-weight: normal;
+    height: auto;
+    line-height: inherit;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
 }
 
 .app-action {
-  display: inline-block;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
 
 .app-spinner {
-  height: 30px;
-  width: 30px;
-  display: inline-block;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
 }
 
-.app-list [md-raised-button]{
-  line-height: 15px;
+.app-list [md-raised-button] {
+    line-height: 15px;
 }
-.app-list-item .md-list-item{
-  height: 25px;
+
+.app-list-item .md-list-item {
+    height: 25px;
 }
 
 /*TABLE LIST DATA*/
 .table-list table {
-  margin-bottom:50px;
+    margin-bottom: 50px;
 }
 
 .table-list table tr .title {
-  background:#5f9be3;
-  color:#fff;
-  font-weight:bold;
-  padding:5px;
-  width:100px;
+    background: #5f9be3;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    width: 100px;
 }
 
 .table-list table tr .text {
-  padding-left:30px;
+    padding-left: 30px;
 }

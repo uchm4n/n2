@@ -46,7 +46,7 @@ export const firebaseConfig = {
         AgmCoreModule.forRoot({apiKey: 'AIzaSyBVp596mYM-BWWRsQZds-0xGQartHRJhCc'}),
         AngularFireModule.initializeApp(firebaseConfig)
     ],
-    providers: [AuthService, AUTH_PROVIDERS, AuthGuard,InterfacesService],
+    providers: [AuthService, AUTH_PROVIDERS, AuthGuard, InterfacesService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

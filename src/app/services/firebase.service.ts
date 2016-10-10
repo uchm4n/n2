@@ -32,11 +32,11 @@ export class FirebaseService {
         return this.persons.push(newPerson);
     }
 
-    updatePerson(key,updPerson){
-        return this.persons.update(key,updPerson);
+    updatePerson(key, updPerson) {
+        return this.persons.update(key, updPerson);
     }
 
-    deletePerson(key){
+    deletePerson(key) {
         return this.persons.remove(key);
     }
 

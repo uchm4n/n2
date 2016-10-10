@@ -42,7 +42,7 @@
     </md-card>
     <md-card *ngIf="appState == 'update'">
         <h1>Update Person</h1>
-        <form (submit)="updatePerson(activeKey)"  name="person">
+        <form (submit)="updatePerson(activeKey)" name="person">
             <div *ngFor="let person of persons">
                 <div *ngIf="activeKey == person.$key">
                     <table>
@@ -57,13 +57,14 @@
                         <tr>
                             <td class="title">Biography:</td>
                             <td class="text">
-                        <textarea  name="bio" [(ngModel)]="activeBio" placeholder="You Biography" cols="50" rows="5" id="textarea1" class="materialize-textarea"></textarea>
+                                <textarea name="bio" [(ngModel)]="activeBio" placeholder="You Biography" cols="50" rows="5" id="textarea1"
+                                          class="materialize-textarea"></textarea>
                             </td>
                         </tr>
                         <tr>
                             <td class="title">Image:</td>
                             <td class="text">
-                                <md-input  name="image" [(ngModel)]="activeImg">
+                                <md-input name="image" [(ngModel)]="activeImg">
                                     <md-placeholder><i class="fa fa-picture-o" aria-hidden="true"></i></md-placeholder>
                                 </md-input>
                             </td>
@@ -106,7 +107,7 @@
                 <h4 md-line>{{person.name}}</h4>
                 <button md-raised-button (click)="changeState('extend',person.$key)">More</button>
                 <button md-raised-button color="primary" (click)="showEdit(person)">Edit</button>
-                <button md-raised-button color="warn" (click)="deletePerson(person.$key)" >Delete</button>
+                <button md-raised-button color="warn" (click)="deletePerson(person.$key)">Delete</button>
             </md-list-item>
         </md-list>
     </md-card>
