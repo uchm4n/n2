@@ -36,7 +36,7 @@
                 </tr>
             </table>
             <br>
-            <button md-raised-button (click)="changeState('default')">Go Back</button>
+            <button md-raised-button (click)="changeState('')">Go Back</button>
             <input md-raised-button color="primary" type="submit" value="Save">
         </form>
     </md-card>
@@ -68,7 +68,7 @@
                 <h4 md-line>{{person.name}}</h4>
                 <button md-raised-button (click)="changeState('extend',person.$key)">More</button>
                 <button md-raised-button color="primary">Edit</button>
-                <button md-raised-button color="warn">Delete</button>
+                <button md-raised-button color="warn" (click)="deletePerson(person.$key)" >Delete</button>
             </md-list-item>
         </md-list>
     </md-card>

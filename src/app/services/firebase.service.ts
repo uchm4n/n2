@@ -29,7 +29,15 @@ export class FirebaseService {
     }
 
     addPerson(newPerson) {
-        this.persons.push(newPerson);
+        return this.persons.push(newPerson);
+    }
+
+    updatePerson(key,updPerson){
+        return this.persons.update(key,updPerson);
+    }
+
+    deletePerson(key){
+        return this.persons.remove(key);
     }
 
 }

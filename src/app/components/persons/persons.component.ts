@@ -48,4 +48,12 @@ export class PersonsComponent implements OnInit {
         this.changeState('default')
     }
 
+    deletePerson(key){
+        if(key != null){
+            if (confirm('Are you sure you want to delete this?')) {
+                return this.fs.deletePerson(key);
+            }
+        }
+    }
+
 }
