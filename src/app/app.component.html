@@ -1,40 +1,40 @@
 <md-sidenav-layout style="min-height: 300px">
-  <md-sidenav #sidenav mode="push" class="app-sidenav">
-    <md-list class="app-list">
-      <h3 md-subheader></h3>
-      <md-list-item>
-        <a md-button (click)="sidenav.close()" class="menu-link" [routerLink]="['/']">Home</a>
-      </md-list-item>
-      <md-list-item *ngIf="auth.authenticated()">
-        <a md-button (click)="sidenav.close()" class="menu-link" [routerLink]="['profile']">Profile</a>
-      </md-list-item>
-      <md-list-item>
-        <a md-button (click)="sidenav.close()" class="menu-link" [routerLink]="['persons']">CRUD on Firebase</a>
-      </md-list-item>
-      <md-list-item>
-        <a md-button (click)="sidenav.close()" class="menu-link" [routerLink]="['about']">About</a>
-      </md-list-item>
+    <md-sidenav #sidenav mode="push" class="app-sidenav">
+        <md-list class="app-list">
+            <h3 md-subheader></h3>
+            <md-list-item>
+                <a md-button (click)="sidenav.close()" class="menu-link" [routerLink]="['/']">Home</a>
+            </md-list-item>
+            <md-list-item *ngIf="auth.authenticated()">
+                <a md-button (click)="sidenav.close()" class="menu-link" [routerLink]="['profile']">Profile</a>
+            </md-list-item>
+            <md-list-item>
+                <a md-button (click)="sidenav.close()" class="menu-link" [routerLink]="['persons']">CRUD on Firebase</a>
+            </md-list-item>
+            <md-list-item>
+                <a md-button (click)="sidenav.close()" class="menu-link" [routerLink]="['about']">About</a>
+            </md-list-item>
 
-      <md-divider></md-divider>
-      <md-list-item *ngIf="!auth.authenticated()">
-        <a md-button (click)="auth.login()" class="menu-link" [routerLink]="['login']">Login</a>
-      </md-list-item>
-      <md-list-item *ngIf="auth.authenticated()">
-        <a md-button (click)="auth.logout()" class="menu-link" [routerLink]="['logout']">Logout</a>
-      </md-list-item>
-    </md-list>
-  </md-sidenav>
-  <md-toolbar color="primary">
-    <button class="app-icon-button" (click)="sidenav.toggle()">
-      <i class="material-icons app-toolbar-menu">menu</i>
-    </button>
-    Starter Kit Project
-    <span class="app-toolbar-filler"></span>
-  </md-toolbar>
+            <md-divider></md-divider>
+            <md-list-item *ngIf="!auth.authenticated()">
+                <a md-button (click)="auth.login()" class="menu-link" [routerLink]="['login']">Login</a>
+            </md-list-item>
+            <md-list-item *ngIf="auth.authenticated()">
+                <a md-button (click)="auth.logout()" class="menu-link" [routerLink]="['logout']">Logout</a>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <md-toolbar color="primary">
+        <button class="app-icon-button" (click)="sidenav.toggle()">
+            <i class="material-icons app-toolbar-menu">menu</i>
+        </button>
+        Starter Kit Project
+        <span class="app-toolbar-filler"></span>
+    </md-toolbar>
 
-  <div class="app-content">
-    <router-outlet></router-outlet>
-  </div>
+    <div class="app-content">
+        <router-outlet></router-outlet>
+    </div>
 
 </md-sidenav-layout>
 

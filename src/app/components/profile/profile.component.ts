@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
 
 @Component({
-  selector: 'app-profile',
-  template: `
+    selector: 'app-profile',
+    template: `
     <p>This is {{profile.nickname}}'s profile</p>
     <div>
       <p><img src="{{profile.picture}}" alt="" width="150"></p>
@@ -13,12 +13,13 @@ import {AuthService} from "../../services/auth.service";
     
     
   `,
-  styles: []
+    styles: []
 })
-export class ProfileComponent{
-  profile;
-  constructor(private auth:AuthService){
-    this.profile = JSON.parse(localStorage.getItem('profile'));
-  }
+export class ProfileComponent {
+    profile;
+
+    constructor(private auth: AuthService) {
+        this.profile = JSON.parse(localStorage.getItem('profile'));
+    }
 
 }

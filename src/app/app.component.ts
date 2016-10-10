@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 import {AuthService} from "./services/auth.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styles:[`
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styles: [`
     .menu-link{
       text-decoration: none;
       display: inline-block;
@@ -13,6 +13,6 @@ import {AuthService} from "./services/auth.service";
   `]
 })
 export class AppComponent {
-  constructor(private auth:AuthService){
-  }
+    constructor(private auth: AuthService) {
+    }
 }
