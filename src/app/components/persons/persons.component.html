@@ -40,7 +40,45 @@
             <input md-raised-button color="primary" type="submit" value="Save">
         </form>
     </md-card>
+    <md-card *ngIf="appState == 'update'">
+        <h1>Update Person</h1>
+        <form (submit)="updatePerson(activeKey)"  name="person">
+            <div *ngFor="let person of persons">
+                <div *ngIf="activeKey == person.$key">
+                    <table>
+                        <tr>
+                            <td class="title">Name:</td>
+                            <td class="text">
+                                <md-input [(ngModel)]="activeName" name="name">
+                                    <md-placeholder><i class="fa fa-user" aria-hidden="true"></i></md-placeholder>
+                                </md-input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">Biography:</td>
+                            <td class="text">
+                        <textarea  name="bio" [(ngModel)]="activeBio" placeholder="You Biography" cols="50" rows="5" id="textarea1" class="materialize-textarea"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">Image:</td>
+                            <td class="text">
+                                <md-input  name="image" [(ngModel)]="activeImg">
+                                    <md-placeholder><i class="fa fa-picture-o" aria-hidden="true"></i></md-placeholder>
+                                </md-input>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <br>
+            <button md-raised-button (click)="changeState('')">Go Back</button>
+            <input md-raised-button color="primary" type="submit" value="Save">
+        </form>
+    </md-card>
     <md-card *ngIf="appState == 'extend'">
+        <h1>Show Person</h1>
         <table>
             <div *ngFor="let person of persons">
                 <div *ngIf="activeKey == person.$key">
@@ -67,7 +105,7 @@
             <md-list-item class="app-list-item" *ngFor="let person of persons">
                 <h4 md-line>{{person.name}}</h4>
                 <button md-raised-button (click)="changeState('extend',person.$key)">More</button>
-                <button md-raised-button color="primary">Edit</button>
+                <button md-raised-button color="primary" (click)="showEdit(person)">Edit</button>
                 <button md-raised-button color="warn" (click)="deletePerson(person.$key)" >Delete</button>
             </md-list-item>
         </md-list>
