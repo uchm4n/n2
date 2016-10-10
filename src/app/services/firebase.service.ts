@@ -1,12 +1,6 @@
 import {Injectable} from "@angular/core";
 import {FirebaseListObservable, AngularFire} from "angularfire2";
-
-export interface Person {
-    $key?: string;
-    bio: string;
-    image: string;
-    name: string;
-}
+import {Person} from "./interfaces.service";
 
 
 @Injectable()

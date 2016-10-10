@@ -16,6 +16,7 @@ import {AgmCoreModule} from "angular2-google-maps/core";
 import {AngularFireModule} from "angularfire2";
 import {AboutComponent} from "./components/about/about.component";
 import {PersonsComponent} from "./components/persons/persons.component";
+import {InterfacesService} from "./services/interfaces.service";
 
 
 // FireBase Config
@@ -45,7 +46,7 @@ export const firebaseConfig = {
         AgmCoreModule.forRoot({apiKey: 'AIzaSyBVp596mYM-BWWRsQZds-0xGQartHRJhCc'}),
         AngularFireModule.initializeApp(firebaseConfig)
     ],
-    providers: [AuthService, AUTH_PROVIDERS, AuthGuard],
+    providers: [AuthService, AUTH_PROVIDERS, AuthGuard,InterfacesService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
