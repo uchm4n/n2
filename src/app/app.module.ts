@@ -11,7 +11,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { ContentComponent } from './components/content/content.component';
 import {routing} from "./app.routing";
 import { AngularFireModule } from 'angularfire2';
-
+import * as firebase from 'firebase';
 
 // FireBase Config
 export const FirebaseConfig = {
