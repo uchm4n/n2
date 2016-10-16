@@ -1,17 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { AppComponent } from './app.component';
-import { FormtestComponent } from './components/formtest/formtest.component';
+import {HttpModule} from '@angular/http';
+import {AppComponent} from './app.component';
+import {FormtestComponent} from './components/formtest/formtest.component';
 import {RatingModule, ModalModule} from 'ng2-bootstrap/ng2-bootstrap';
-import { FooterComponent } from './components/footer/footer.component';
-import { LogoComponent } from './components/logo/logo.component';
-import { NavComponent } from './components/nav/nav.component';
-import { ContentComponent } from './components/content/content.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {LogoComponent} from './components/logo/logo.component';
+import {NavComponent} from './components/nav/nav.component';
+import {ContentComponent} from './components/content/content.component';
 import {routing} from "./app.routing";
-import { AngularFireModule } from 'angularfire2';
-import * as firebase from 'firebase';
+import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
+import {AuthGuard} from "./auth.guard";
+import {AuthService} from "./services/auth.service";
 
 // FireBase Config
 export const FirebaseConfig = {
@@ -19,7 +20,6 @@ export const FirebaseConfig = {
   authDomain: "toper-c1d66.firebaseapp.com",
   databaseURL: "https://toper-c1d66.firebaseio.com",
   storageBucket: "toper-c1d66.appspot.com",
-  messagingSenderId: "594764251481"
 };
 
 @NgModule({
@@ -39,9 +39,13 @@ export const FirebaseConfig = {
     HttpModule,
     routing,
     ModalModule,
-    AngularFireModule.initializeApp(FirebaseConfig)
+    AngularFireModule.initializeApp(FirebaseConfig, {
+      provider: AuthProviders.Password,
+      method: AuthMethods.Password
+    })
   ],
-  providers: [],
+  providers: [AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

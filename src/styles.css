@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+#logo h1 {
+  background: #3a4138;
+}
+
+#logo a:hover, a:active {
+  text-decoration: none;
+  color: whitesmoke;
+}
