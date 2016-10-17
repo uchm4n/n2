@@ -1,49 +1,33 @@
 import {Injectable} from "@angular/core";
-import {FirebaseAuthState, FirebaseAuth, AuthProviders} from "angularfire2";
 
 
 @Injectable()
 export class AuthService {
   
-  private authState: FirebaseAuthState = null;
+  public authState;
   
-  constructor(public auth$: FirebaseAuth) {
-    auth$.subscribe((state: FirebaseAuthState) => {
-      this.authState = state;
+
+constructor() {}
+  
+  signInWithPassword(email,password) {
+    return firebase.auth().signInWithEmailAndPassword(email,password);
+  }
+  
+  signInWithGoogle() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('profile');
+    provider.addScope('email');
+    return firebase.auth().signInWithPopup(provider).catch(function(error) {
+      var errorMessage = error.message;
     });
   }
   
-  get authenticated(): boolean {
-    return this.authState !== null;
-  }
-  
-  get id(): string {
-    return this.authenticated ? this.authState.uid : '';
-  }
-  
-  signIn(provider: number): firebase.Promise<FirebaseAuthState> {
-    return this.auth$.login({provider})
-    .catch(error => console.log('ERROR @ AuthService#signIn() :', error));
-  }
-  
-  signInWithFacebook(): firebase.Promise<FirebaseAuthState> {
-    return this.signIn(AuthProviders.Facebook);
-  }
-  
-  signInWithGithub(): firebase.Promise<FirebaseAuthState> {
-    return this.signIn(AuthProviders.Github);
-  }
-  
-  signInWithGoogle(): firebase.Promise<FirebaseAuthState> {
-    return this.signIn(AuthProviders.Google);
-  }
-  
-  signInWithTwitter(): firebase.Promise<FirebaseAuthState> {
-    return this.signIn(AuthProviders.Twitter);
-  }
-  
   signOut(): void {
-    this.auth$.logout();
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+    }, function(error) {
+      // An error happened.
+    });
   }
 
 

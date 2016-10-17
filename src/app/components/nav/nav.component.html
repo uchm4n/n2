@@ -1,6 +1,7 @@
 <nav id="nav">
   <ul>
     <li routerLinkActive="['']"><a [routerLink]="['']">Home</a></li>
+    <li><a href="#" (click)="showChildModal()">ავტორიზაცია</a></li>
     <li>
       <a href="#">ავტორიზაცია</a>
       <ul>
@@ -22,16 +23,36 @@
 <!-- control modal from parent component -->
 
 <div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" aria-label="Close" (click)="hideChildModal()">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title">გაიარეთ ავტორიზაცია</h4>
+        <h4 class="modal-title">გაიარეთ ავტორიზაცია ან დარეგისტრირდიტ</h4>
       </div>
       <div class="modal-body">
-        ავტორიზაციისატვის უნდა დალოგინდეთ
+
+        <div *ngIf="authenticated != true">
+          <form [formGroup]="form" (submit)="signInWithPassword()" >
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="checkbox"><label><input type="checkbox">Remember me</label></div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button (click)="signInWithGoogle()" class="btn btn-default">Google</button>
+            <button class="btn btn-default">Facebook</button>
+          </form>
+
+        </div>
+
+        <button *ngIf="authenticated == true" (click)="signOut()" class="btn btn-default">LogOut</button>
+
       </div>
     </div>
   </div>

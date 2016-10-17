@@ -9,18 +9,19 @@ import 'rxjs/add/operator/take';
 
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuard {
   constructor(private auth: AuthService, private router: Router) {}
   
-  canActivate(): Observable<boolean> {
-    return this.auth.auth$
-    .take(1)
-    .map(authState => !!authState)
-    .do(authenticated => {
-      if (!authenticated) {
-        this.router.navigate(['/']);
-      }
-    });
-  }
+  // canActivate(){
+  //   return console.log('')
+  //   // this.auth.auth$
+  //   // .take(1)
+  //   // .map(authState => !!authState)
+  //   // .do(authenticated => {
+  //   //   if (!authenticated) {
+  //   //     this.router.navigate(['/']);
+  //   //   }
+  //   // });
+  // }
   
 }
