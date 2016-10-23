@@ -1,11 +1,10 @@
-///<reference path="../../../../node_modules/@angular/core/src/metadata/lifecycle_hooks.d.ts"/>
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import {ModalDirective} from "ng2-bootstrap";
 import {ViewChild} from "@angular/core/src/metadata/di";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
-import {REACTIVE_FORM_DIRECTIVES} from "@angular/forms/src/directives";
+import {FirebaseApp} from "angularfire2";
 
 @Component({
   selector: 'app-nav',
@@ -17,17 +16,17 @@ export class NavComponent implements  OnInit{
   
   form:FormGroup;
   authenticated;
-  constructor(public auth:AuthService, private router: Router,public fb:FormBuilder) {
+  constructor(public auth:AuthService, private router: Router,public fb:FormBuilder,@Inject(FirebaseApp) firebaseApp: any) {
     this.form = this.fb.group({
-      email:['ucha19871@gmail.com',Validators.required],
-      password:['12345678',Validators.required],
+      email:['ucha@clips4sale.com',Validators.required],
+      password:['',Validators.required],
     })
-    
+
+    console.log(this.auth.isAuthenticated())
   }
   
   ngOnInit(): void {
-    console.log(this.auth.authState)
-    this.authenticated = this.auth.authState;
+    this.authenticated = this.auth.isAuthenticated();
   }
   
   
@@ -43,14 +42,14 @@ export class NavComponent implements  OnInit{
   
   signInWithPassword(): void {
   
-    this.auth.signInWithPassword(this.form.value.email, this.form.value.password).catch(function(error) {
+    this.auth.signInWithPassword(this.form.value.email, this.form.value.password)
+    .catch(function(error) {
       // Handle Errors here.
       var errorMessage = error.message;
       console.log(errorMessage)
     }).then(() =>
       {
         this.postSignIn();
-        this.authenticated = true;
       }
     );
     

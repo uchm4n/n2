@@ -33,7 +33,7 @@
       </div>
       <div class="modal-body">
 
-        <div *ngIf="authenticated != true">
+        <div *ngIf="!authenticated">
           <form [formGroup]="form" (submit)="signInWithPassword()" >
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
@@ -51,7 +51,7 @@
 
         </div>
 
-        <button *ngIf="authenticated == true" (click)="signOut()" class="btn btn-default">LogOut</button>
+        <button *ngIf="authenticated" (click)="signOut()" class="btn btn-default">LogOut</button>
 
       </div>
     </div>

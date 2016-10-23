@@ -4,11 +4,6 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class AuthService {
   
-  public authState;
-  
-
-constructor() {}
-  
   signInWithPassword(email,password) {
     return firebase.auth().signInWithEmailAndPassword(email,password);
   }
@@ -28,6 +23,15 @@ constructor() {}
     }, function(error) {
       // An error happened.
     });
+  }
+  
+  isAuthenticated(){
+    let user = firebase.auth().currentUser;
+    if (user){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 

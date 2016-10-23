@@ -13,7 +13,7 @@ import {routing} from "./app.routing";
 import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 import {AuthGuard} from "./auth.guard";
 import {AuthService} from "./services/auth.service";
-
+import * as firebase from "firebase";
 // FireBase Config
 export const FirebaseConfig = {
   apiKey: "AIzaSyD4Y_CqGPD_ptfBeitzblgqvBLa_u6LhdA",
@@ -21,6 +21,12 @@ export const FirebaseConfig = {
   databaseURL: "https://toper-c1d66.firebaseio.com",
   storageBucket: "toper-c1d66.appspot.com",
 };
+const FirebaseAuthConfigWgs = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password,
+  remember: 'default',
+  scope: ['email', 'profile']
+}
 
 @NgModule({
   declarations: [
@@ -39,10 +45,7 @@ export const FirebaseConfig = {
     HttpModule,
     routing,
     ModalModule,
-    AngularFireModule.initializeApp(FirebaseConfig, {
-      provider: AuthProviders.Password,
-      method: AuthMethods.Password
-    })
+    AngularFireModule.initializeApp(FirebaseConfig,FirebaseAuthConfigWgs)
   ],
   providers: [AuthGuard,AuthService],
   bootstrap: [AppComponent]
