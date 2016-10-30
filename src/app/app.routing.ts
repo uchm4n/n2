@@ -7,6 +7,7 @@ import {AuthGuard} from "./auth.guard";
 const appRoutes: Routes = [
     {path: '', component: ContentComponent},
     {path: 'formtest', component: FormtestComponent, canActivate: [AuthGuard]},
+    {path: '**', redirectTo: ''}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
