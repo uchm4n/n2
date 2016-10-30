@@ -1,4 +1,4 @@
-import {Component, OnInit, Inject} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {ModalDirective} from "ng2-bootstrap";
 import {ViewChild} from "@angular/core/src/metadata/di";
 import {AuthService} from "../../services/auth.service";
@@ -12,24 +12,18 @@ import {FirebaseApp} from "angularfire2";
   styles: [],
   providers:[AuthService]
 })
-export class NavComponent implements  OnInit{
+export class NavComponent {
   
   form:FormGroup;
-  authenticated;
   constructor(public auth:AuthService, private router: Router,public fb:FormBuilder,@Inject(FirebaseApp) firebaseApp: any) {
     this.form = this.fb.group({
       email:['ucha@clips4sale.com',Validators.required],
-      password:['',Validators.required],
+      password:['12345678',Validators.required],
     })
 
-    console.log(this.auth.isAuthenticated())
   }
   
-  ngOnInit(): void {
-    this.authenticated = this.auth.isAuthenticated();
-  }
-  
-  
+
   @ViewChild('childModal') public childModal:ModalDirective;
   
   public showChildModal():void {
@@ -49,6 +43,7 @@ export class NavComponent implements  OnInit{
       console.log(errorMessage)
     }).then(() =>
       {
+        this.hideChildModal();
         this.postSignIn();
       }
     );
@@ -60,7 +55,16 @@ export class NavComponent implements  OnInit{
     this.auth.signInWithGoogle()
     .then(() => this.postSignIn());
   }
-  
+
+  logout(): void{
+    this.auth.signOut();
+    this.postSignIn();
+  }
+
+  isAuth(){
+    return this.auth.isAuthenticated();
+  }
+
   private postSignIn(): void {
     this.router.navigate(['/']);
   }

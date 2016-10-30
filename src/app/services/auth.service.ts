@@ -14,15 +14,17 @@ export class AuthService {
     provider.addScope('email');
     return firebase.auth().signInWithPopup(provider).catch(function(error) {
       var errorMessage = error.message;
+      console.log(errorMessage);
     });
   }
   
-  signOut(): void {
-    firebase.auth().signOut().then(function() {
-      // Sign-out successful.
+  signOut() {
+    firebase.auth().signOut().then(() => {
+      console.log('Sign-out successful.')
+      this.isAuthenticated();
     }, function(error) {
-      // An error happened.
-    });
+      console.log('An error happened.',error.message)
+    })
   }
   
   isAuthenticated(){
