@@ -1,10 +1,10 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 
 @Component({
     selector: 'app-content',
     templateUrl: './content.component.html',
     styles: []
 })
-export class ContentComponent {
+export class ContentComponent{
 
 }

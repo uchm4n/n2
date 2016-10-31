@@ -4,7 +4,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 import {FormtestComponent} from "./components/formtest/formtest.component";
-import {RatingModule, ModalModule} from "ng2-bootstrap/ng2-bootstrap";
+import {RatingModule, ModalModule, AlertModule} from "ng2-bootstrap/ng2-bootstrap";
 import {FooterComponent} from "./components/footer/footer.component";
 import {LogoComponent} from "./components/logo/logo.component";
 import {NavComponent} from "./components/nav/nav.component";
@@ -45,7 +45,7 @@ const FirebaseAuthConfigWgs = {
         RatingModule,
         HttpModule,
         routing,
-        ModalModule,
+        ModalModule,AlertModule,
         AngularFireModule.initializeApp(FirebaseConfig, FirebaseAuthConfigWgs)
     ],
     providers: [AuthGuard, AuthService],

@@ -14,42 +14,47 @@ import {FirebaseApp} from "angularfire2";
 })
 export class NavComponent {
 
-    isAuthenticating: boolean = false;
+    isLoading: boolean = false;
     form: FormGroup;
+    errorMessage;
 
-    constructor(public auth: AuthService, private router: Router, public fb: FormBuilder, @Inject(FirebaseApp) firebaseApp: any) {
+    constructor(public auth: AuthService,
+                private router: Router,
+                public fb: FormBuilder,
+                @Inject(FirebaseApp) firebaseApp: any) {
         this.form = this.fb.group({
-            email: ['ucha@clips4sale.com', Validators.required],
-            password: ['12345678', Validators.required],
+            email: [null, Validators.compose([Validators.required, Validators.pattern('^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$')])],
+            password: ['', Validators.required],
         })
 
     }
 
 
-    @ViewChild('childModal') public childModal: ModalDirective;
+    @ViewChild('staticModal') public staticModal: ModalDirective;
 
-    public showChildModal(): void {
-        this.childModal.show();
+    public showStaticModal(): void {
+        this.staticModal.show();
     }
 
-    public hideChildModal(): void {
-        this.childModal.hide();
+    public hideStaticModal(): void {
+        this.staticModal.hide();
     }
 
     signInWithPassword(): void {
-        this.isAuthenticating = true;
+        this.isLoading = true;
 
         this.auth.signInWithPassword(this.form.value.email, this.form.value.password)
-            .catch(function (error) {
-                // Handle Errors here.
-                var errorMessage = error.message;
-                console.log(errorMessage)
-            }).then(() => {
-                this.isAuthenticating = false;
-                this.hideChildModal();
+            .then(() => {
+                this.isLoading = false;
                 this.postSignIn();
-            }
-        );
+                return this.staticModal.hide();
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                this.isLoading = false;
+                this.errorMessage = error.message;
+
+            });
 
     }
 

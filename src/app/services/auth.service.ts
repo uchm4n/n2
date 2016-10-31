@@ -20,7 +20,6 @@ export class AuthService {
 
     signOut() {
         firebase.auth().signOut().then(() => {
-            console.log('Sign-out successful.')
             this.isAuthenticated();
         }, function (error) {
             console.log('An error happened.', error.message)
