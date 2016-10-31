@@ -14,6 +14,7 @@ import {FirebaseApp} from "angularfire2";
 })
 export class NavComponent {
 
+    isAuthenticating: boolean = false;
     form: FormGroup;
 
     constructor(public auth: AuthService, private router: Router, public fb: FormBuilder, @Inject(FirebaseApp) firebaseApp: any) {
@@ -36,6 +37,7 @@ export class NavComponent {
     }
 
     signInWithPassword(): void {
+        this.isAuthenticating = true;
 
         this.auth.signInWithPassword(this.form.value.email, this.form.value.password)
             .catch(function (error) {
@@ -43,6 +45,7 @@ export class NavComponent {
                 var errorMessage = error.message;
                 console.log(errorMessage)
             }).then(() => {
+                this.isAuthenticating = false;
                 this.hideChildModal();
                 this.postSignIn();
             }
