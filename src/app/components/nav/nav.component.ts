@@ -40,7 +40,7 @@ export class NavComponent {
         this.staticModal.hide();
     }
 
-    signInWithPassword(): void {
+    signInWithPassword() {
         this.isLoading = true;
 
         this.auth.signInWithPassword(this.form.value.email, this.form.value.password)
@@ -50,18 +50,35 @@ export class NavComponent {
                 return this.staticModal.hide();
             })
             .catch((error) => {
-                // Handle Errors here.
+                console.log(error)
                 this.isLoading = false;
-                this.errorMessage = error.message;
-
+                return this.errorMessage = error.message;
             });
 
     }
 
 
-    signInWithGoogle(): void {
+    signInWithGoogle() {
         this.auth.signInWithGoogle()
-            .then(() => this.postSignIn());
+            .then(() => {
+                this.postSignIn();
+                return this.staticModal.hide();
+            })
+            .catch((error) => {
+                this.errorMessage = error.message;
+            });
+        ;
+    }
+
+    signInWithFacebook() {
+        this.auth.signInWithFaceBook()
+            .then(() => {
+                this.postSignIn();
+                return this.staticModal.hide();
+            })
+            .catch((error) => {
+                this.errorMessage = error.message;
+            });
     }
 
     logout(): void {

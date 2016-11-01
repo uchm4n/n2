@@ -12,10 +12,12 @@ export class AuthService {
         var provider = new firebase.auth.GoogleAuthProvider();
         provider.addScope('profile');
         provider.addScope('email');
-        return firebase.auth().signInWithPopup(provider).catch(function (error) {
-            var errorMessage = error.message;
-            console.log(errorMessage);
-        });
+        return firebase.auth().signInWithPopup(provider);
+    }
+
+    signInWithFaceBook() {
+        var provider = new firebase.auth.FacebookAuthProvider();
+        return firebase.auth().signInWithPopup(provider);
     }
 
     signOut() {
