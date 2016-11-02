@@ -3,6 +3,7 @@
         <li routerLinkActive="['']"><a [routerLink]="['']">Home</a></li>
         <li *ngIf="!isAuth()"><a href="#"  (click)="staticModal.show()">ავტორიზაცია</a></li>
         <li *ngIf="isAuth()"><a [routerLink]="['formtest']">FormTest</a></li>
+        <li ><a [routerLink]="['news']">News</a></li>
         <li *ngIf="isAuth()"><a href="#" (click)="logout()">LogOut</a></li>
     </ul>
 </nav>

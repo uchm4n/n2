@@ -3,10 +3,12 @@ import {Routes, RouterModule} from "@angular/router";
 import {ContentComponent} from "./components/content/content.component";
 import {FormtestComponent} from "./components/formtest/formtest.component";
 import {AuthGuard} from "./auth.guard";
+import {NewsComponent} from "./components/news/news.component";
 
 const appRoutes: Routes = [
     {path: '', component: ContentComponent},
     {path: 'formtest', component: FormtestComponent, canActivate: [AuthGuard]},
+    {path: 'news', component: NewsComponent},
     {path: '**', redirectTo: ''}
 ];
 

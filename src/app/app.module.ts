@@ -14,6 +14,7 @@ import {AngularFireModule, AuthProviders, AuthMethods} from "angularfire2";
 import {AuthGuard} from "./auth.guard";
 import {AuthService} from "./services/auth.service";
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { NewsComponent } from './components/news/news.component';
 // FireBase Config
 export const FirebaseConfig = {
     apiKey: "AIzaSyD4Y_CqGPD_ptfBeitzblgqvBLa_u6LhdA",
@@ -37,6 +38,7 @@ const FirebaseAuthConfigWgs = {
         NavComponent,
         ContentComponent,
         SpinnerComponent,
+        NewsComponent,
     ],
     imports: [
         BrowserModule,
