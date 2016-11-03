@@ -11,15 +11,13 @@ export class NewsComponent implements OnInit {
     newsList;
     errorMessage;
 
-    constructor(private news: NewsService) {
-    }
+    constructor(private news: NewsService) {}
 
     ngOnInit() {
         this.news.getNews().subscribe(
             news => this.newsList = news,
             error =>  this.errorMessage = <any>error
         );
-        console.log(this.newsList)
     }
 
 }
