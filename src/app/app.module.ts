@@ -16,6 +16,7 @@ import {AuthService} from "./services/auth.service";
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NewsComponent } from './components/news/news.component';
 import { LimitPipe } from './pipes/limit.pipe';
+import { TODOComponent } from './components/todo/todo.component';
 // FireBase Config
 export const FirebaseConfig = {
     apiKey: "AIzaSyD4Y_CqGPD_ptfBeitzblgqvBLa_u6LhdA",
@@ -41,6 +42,7 @@ const FirebaseAuthConfigWgs = {
         SpinnerComponent,
         NewsComponent,
         LimitPipe,
+        TODOComponent,
     ],
     imports: [
         BrowserModule,
