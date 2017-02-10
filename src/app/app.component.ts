@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Output, EventEmitter, Input} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works fsdfs!';
+  title = 'Georgian Realestate';
+  input = "This  is input placehoder";
+  isDisplayable = true
+
+
+  @Input() updating;
+
+  onUpdating(e){
+    console.log(e)
+  }
+
 }
