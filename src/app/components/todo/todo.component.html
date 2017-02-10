@@ -1,9 +1,0 @@
-
-<h2>Tasks List</h2>
-<ul *ngFor="let task of tasksList;" class="list-group">
-
-  <li (click)="toggleCompleted(task)" class="list-group-item btn">
-    {{task.title | limit:100}}
-    <span *ngIf="task.completed" class="glyphicon glyphicon-ok"></span>
-  </li>
-</ul>
