@@ -1,6 +1,6 @@
 # N2
 ---
-##### This project contains Angular 2, ng2-bootstrap componesnt, primeNG components
+This project contains `Angular 2`, `ng2-bootstrap` components, `PrimeNG` components
 
 ## Requirements 
 ---
