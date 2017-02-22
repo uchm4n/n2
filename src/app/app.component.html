@@ -41,4 +41,13 @@
     </div>
   </div>
 
+
+
+  <p-checkbox name="groupname" value="val1" label="Value 1" [(ngModel)]="selectedValues"></p-checkbox>
+  <p-checkbox name="groupname" value="val2" label="Value 2" [(ngModel)]="selectedValues"></p-checkbox>
+  <p-checkbox [(ngModel)]="value" binary="true"></p-checkbox>
+  <hr>
+  <p-rating [(ngModel)]="val"></p-rating>
+  <hr>
+  <button pButton type="button" (click)="onclick($event)" label="Click"></button>
 </div>

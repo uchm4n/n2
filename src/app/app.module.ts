@@ -6,6 +6,9 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 import {AlertModule, ModalModule} from "ng2-bootstrap";
+import {CheckboxModule} from "primeng/components/checkbox/checkbox";
+import {RatingModule} from "primeng/components/rating/rating";
+import { ButtonModule} from "primeng/components/button/button";
 
 @NgModule({
   declarations: [
@@ -15,8 +18,10 @@ import {AlertModule, ModalModule} from "ng2-bootstrap";
     BrowserModule,
     FormsModule,
     HttpModule,
+    //PrimeNG Modules
+    CheckboxModule,RatingModule,ButtonModule,
     AlertModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
