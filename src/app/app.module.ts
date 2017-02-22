@@ -10,12 +10,15 @@ import {ButtonModule} from "primeng/components/button/button";
 import {MegaMenuModule} from "primeng/components/megamenu/megamenu";
 import {MenuComponent} from "./components/menu/menu.component";
 import {AppRoutingModule} from "./app.routing";
+import {TasksComponent} from "./components/tasks/tasks.component";
+import {DataListModule} from "primeng/components/datalist/datalist";
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        MenuComponent
+        MenuComponent,
+        TasksComponent
     ],
     imports: [
         BrowserModule,
@@ -23,12 +26,14 @@ import {AppRoutingModule} from "./app.routing";
         HttpModule,
         AppRoutingModule,
         //PrimeNG Modules
-        CheckboxModule, ButtonModule, MegaMenuModule,
+        CheckboxModule, ButtonModule, MegaMenuModule,DataListModule,
         //Bootstrap modules
         AlertModule.forRoot(),
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule {
 }

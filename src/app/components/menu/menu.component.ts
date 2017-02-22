@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
                     [
                         {
                             label: 'Main Page',
-                            items: [{label: 'Main Page 1'}, {label: 'Main Page 2'}]
+                            items: [{label: 'Main Page 1',url:'http://www.google.com'}, {label: 'Main Page 2'}]
                         },
                         {
                             label: 'TV 2',
