@@ -1,4 +1,44 @@
-<h1>
-  {{title}}
-</h1>
-<hr>
+<div class="container">
+
+  <h1>
+    {{title}}
+  </h1>
+  <hr>
+  <alert type="success" dismissOnTimeout="5">
+    <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+  </alert>
+  <alert type="info" dismissible="true">
+    <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+  </alert>
+  <alert type="warning" dismissible="true">
+    <strong>Warning!</strong> Better check yourself, you're <a href="#" class="alert-link">not looking too good</a>.
+  </alert>
+  <alert type="danger" dismissible="true">
+    <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+  </alert>
+
+
+  <button type="button" class="btn btn-primary" (click)="staticModal.show()">Static modal</button>
+
+  <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Static modal</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          This is static modal, backdrop click will not close it.
+          Click <b>&times;</b> to close modal.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          A at facilis fugiat iste magnam nemo recusandae sit?
+          Aliquam debitis eaque et eum explicabo facere ipsam nemo nulla provident quia. Rem!
+          {{title}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
