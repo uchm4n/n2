@@ -11,6 +11,7 @@ import {TasksComponent} from "./components/tasks/tasks.component";
 import {DataListModule} from "primeng/components/datalist/datalist";
 import { HomeComponent } from './components/home/home.component';
 import {MenuModule} from "primeng/components/menu/menu";
+import { Error404Component } from './components/error404/error404.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {MenuModule} from "primeng/components/menu/menu";
         AppComponent,
         MenuComponent,
         TasksComponent,
-        HomeComponent
+        HomeComponent,
+        Error404Component
     ],
     imports: [
         BrowserModule,
