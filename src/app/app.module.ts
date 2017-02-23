@@ -12,6 +12,9 @@ import {DataListModule} from "primeng/components/datalist/datalist";
 import { HomeComponent } from './components/home/home.component';
 import {MenuModule} from "primeng/components/menu/menu";
 import { Error404Component } from './components/error404/error404.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { Error404Component } from './components/error404/error404.component';
         MenuComponent,
         TasksComponent,
         HomeComponent,
-        Error404Component
+        Error404Component,
+        AdminComponent,
+        AdminDashboardComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
