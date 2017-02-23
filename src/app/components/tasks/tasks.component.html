@@ -1,4 +1,6 @@
 <p-dataList [value]="tasks" [paginator]="true" [rows]="20">
+    <p-header>Tasks</p-header>
+    <p-footer>Choose from the list.</p-footer>
     <template let-task pTemplate="item">
         <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:16px;padding:20px;border-bottom:1px solid #D5D5D5;">
             <div class="ui-grid-row">

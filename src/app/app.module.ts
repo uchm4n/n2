@@ -5,20 +5,20 @@ import {HttpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 import "hammerjs";
 import {AlertModule} from "ng2-bootstrap";
-import {CheckboxModule} from "primeng/components/checkbox/checkbox";
-import {ButtonModule} from "primeng/components/button/button";
-import {MegaMenuModule} from "primeng/components/megamenu/megamenu";
 import {MenuComponent} from "./components/menu/menu.component";
 import {AppRoutingModule} from "./app.routing";
 import {TasksComponent} from "./components/tasks/tasks.component";
 import {DataListModule} from "primeng/components/datalist/datalist";
+import { HomeComponent } from './components/home/home.component';
+import {MenuModule} from "primeng/components/menu/menu";
 
 
 @NgModule({
     declarations: [
         AppComponent,
         MenuComponent,
-        TasksComponent
+        TasksComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,
@@ -26,7 +26,7 @@ import {DataListModule} from "primeng/components/datalist/datalist";
         HttpModule,
         AppRoutingModule,
         //PrimeNG Modules
-        CheckboxModule, ButtonModule, MegaMenuModule,DataListModule,
+        DataListModule,MenuModule,
         //Bootstrap modules
         AlertModule.forRoot(),
     ],

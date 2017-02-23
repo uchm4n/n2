@@ -16,34 +16,19 @@ export class MenuComponent implements OnInit {
     ngOnInit() {
         this.items = [
             {
-                label: 'Home', icon: 'fa-home',
+                label: 'Main',
+                icon: 'fa-home',
                 items: [
-                    [
-                        {
-                            label: 'Main Page',
-                            items: [{label: 'Main Page 1',url:'http://www.google.com'}, {label: 'Main Page 2'}]
-                        },
-                        {
-                            label: 'TV 2',
-                            items: [{label: 'TV 2.1'}, {label: 'TV 2.2'}]
-                        }
-                    ]
+                    {label: 'Home',icon: 'fa-home', url:'home'},
+                    {label: 'Tasks',icon: 'fa-list-ul', url:'tasks'},
                 ]
             },
             {
-                label: 'List', icon: 'fa-list',
+                label: 'Settings',
                 items: [
-                    [
-                        {
-                            label: 'List 1',
-                            items: [{label: 'List 1.1'}, {label: 'List 1.2'}]
-                        },
-                        {
-                            label: 'List 2',
-                            items: [{label: 'List 2.1'}, {label: 'List 2.2'}]
-                        },
-
-                    ]
+                    { label: 'Users', icon: 'fa-users'},
+                    { label: 'Roles', icon: 'fa-address-card'},
+                    { label: 'Permissions', icon: 'fa-address-book'},
                 ]
             }
         ];
